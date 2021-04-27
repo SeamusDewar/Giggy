@@ -14,7 +14,7 @@ admin.initializeApp();
 
 //post comments
 exports.postcomments= functions.https.onRequest((request,response) => {
-    console.log("Request body", request.body);
+   
     cors(request, response, () => {
 
     
