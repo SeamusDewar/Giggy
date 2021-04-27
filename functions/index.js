@@ -33,11 +33,25 @@ admin.firestore().collection('comments').get().then((snapshot) => {
                     return;
             }
             snapshot.forEach(doc => {
-            myData.push(doc.data());
+            let docObj = {};
+           docObj.id = doc.id;
+           myData.push(Object.assign(docObj, doc.data()));
             });
             // 2. Send data back to client
             response.send(myData);
             })
+     
+     //delete comments
+     
+     exports.deletecomment = functions.https.onRequest((request, response) => {
+cors(request, response, () => {
+// your function body here - use the provided req and res from cors
+admin.firestore().collection("comments").doc(request.query.id).delete().then(function()
+{
+response.send("Document successfully deleted!");
+})
+});
+
 
   
 });
