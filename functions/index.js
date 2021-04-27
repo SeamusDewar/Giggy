@@ -16,6 +16,9 @@ admin.initializeApp();
 exports.postcomments= functions.https.onRequest((request,response) => {
    
     cors(request, response, () => {
+       const currentTime = admin.firestore.Timestamp.now();
+        request.body.timestamp = currentTime;
+
 
     
 return admin.firestore().collection('comments').add(request.body).then(()=>{
@@ -24,9 +27,11 @@ return admin.firestore().collection('comments').add(request.body).then(()=>{
   
   //get comments
   exports.getcomments = functions.https.onRequest((request, response) => {
-const cors = require('cors')({origin: true});
-let myData = []
-admin.firestore().collection('comments').get().then((snapshot) => {
+     
+ cors(request, response, () => {
+
+     let myData = []
+return admin.firestore().collection('comments').orderBy("timestamp,"desc").get().then((snapshot) => {
                     if (snapshot.empty) {
                     console.log('No matching documents.');
                     response.send('No data in database');
