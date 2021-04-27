@@ -51,6 +51,16 @@ admin.firestore().collection("comments").doc(request.query.id).delete().then(fun
 response.send("Document successfully deleted!");
 })
 });
+        
+        //update comments
+             exports.updatecomment = functions.https.onRequest((request, response) => {
+cors(request, response, () => {
+// your function body here - use the provided req and res from cors
+admin.firestore().collection("comments").doc(request.query.id).update().then(function()
+{
+response.send("Document successfully updated!");
+})
+});
 
 
   
