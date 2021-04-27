@@ -9,17 +9,22 @@ const functions = require("firebase-functions");
 //   response.send("Hello from Firebase!");
 // });
 const admin = require('firebase-admin');
+const cors = require('cors')({origin: true});
 admin.initializeApp();
 
 //post comments
 exports.postcomments= functions.https.onRequest((request,response) => {
+    console.log("Request body", request.body);
+    cors(request, response, () => {
+
+    
 return admin.firestore().collection('comments').add(request.body).then(()=>{
     response.send("Saved in the database");
 });
   
   //get comments
   exports.getcomments = functions.https.onRequest((request, response) => {
-
+const cors = require('cors')({origin: true});
 let myData = []
 admin.firestore().collection('comments').get().then((snapshot) => {
                     if (snapshot.empty) {
