@@ -2,8 +2,10 @@
 //geo lactaion function
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
+   return navigator.geolocation.getCurrentPosition(showPosition);
+   
+  }
+  else {
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
