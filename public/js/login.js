@@ -1,18 +1,18 @@
 function login()
 {
-    let email = document.getElementById('exampleInputEmail1').value
-    let password = document.getElementById('exampleInputPassword1').value
+    let email = document.getElementById('inputEmail').value
+    let password = document.getElementById('inputPassword').value
 
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
             // Signed in
             var user = userCredential.user;
             document.cookie = "accessToken=" + user.za;
-            document.cookie = "uid=" + user.uid;
+           // document.cookie = "uid=" + user.uid; not currently using yet
             console.log("User object", user);
             // Call firebase function to save users other credentials, create another docs etc.
 
-            window.location.href = "/secure.html"
+            window.location.href = "/acts.html"
             // ...
         })
         .catch((error) => {
