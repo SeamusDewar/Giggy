@@ -13,6 +13,10 @@ class GFG {
         // The math module contains a function
         // named toRadians which converts from
         // degrees to radians.
+	    
+	    distancelocation= getLocation();
+	    //use link paulo sent to retrive info from position  of both people and compare
+	    
         final int R = 6371; // Radius of the earth
 	// Haversine formula
     double latDistance = Math.toRadians(lat2 - lat1);
@@ -48,6 +52,8 @@ class GFG {
 	   {
 		   break;
 	   }
+	    
+	    //a function to add ppl to database,post request to add 
   
 }
 
