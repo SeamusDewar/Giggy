@@ -1,19 +1,19 @@
 function register()
 {
-    let email = document.getElementById('exampleInputEmail1').value
-    let password = document.getElementById('exampleInputPassword1').value
+    let email = document.getElementById('inputEmail').value
+    let password = document.getElementById('inputPassword').value
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
             // Signed in
             var user = userCredential.user;
-            window.location.href = "/secure.html"
+            window.location.href = "/acts.html"
             // ...
         })
         .catch((error) => {
             var errorCode = error.code;
             var errorMessage = error.message;
-            // ..
             console.log(errorMessage, errorCode);
+            // ..  
         });
 }
