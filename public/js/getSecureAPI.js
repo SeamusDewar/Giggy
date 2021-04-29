@@ -1,6 +1,16 @@
 function getSecureAPI(){
+    
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            // User is signed in.
+            console.log(firebase.auth().currentUser);
+        } else {
+            // No user is signed in.
+        }
+    });
+    
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://us-central1-ct216app.cloudfunctions.net/authorizedendpoint');
+    xhr.open('GET', 'https://us-central1-ct216giggy.cloudfunctions.net/authorizedendpoint');
 
 // Track the state changes of the request.
     xhr.onreadystatechange = function () {
@@ -16,7 +26,7 @@ function getSecureAPI(){
         }
     };
     // Set the Authorization header
-    xhr.setRequestHeader('Authorization', 'Bearer ' + getCookie('accessToken'))
+    xhr.setRequestHeader('Authorization', 'Bearer' + getCookie('accessToken'))
     xhr.send(null);
 }
 
