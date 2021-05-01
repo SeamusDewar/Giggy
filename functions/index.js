@@ -4,6 +4,15 @@ const admin = require('firebase-admin');
 const cors = require('cors')({origin: true});
 admin.initializeApp();
 
+exports.uploaduserinfo = functions.https.onRequest((request, response) => {
+	cors(request, response, () => {
+		
+		    return admin.firestore().collection('UserData').add(request.body).then((snapshot) => {
+            response.send("Saved in the database");
+        });
+    });
+});
+
 //post comments
 exports.postcomments= functions.https.onRequest((request,response) => {
    
