@@ -7,6 +7,7 @@ function uploadUserInfo() {
 	var entertainment = document.querySelector('input[name="entertainment"]:checked').value;
 	const checkboxes = document.querySelectorAll('input[name="music"]:checked');
 	var description = document.getElementById('description').value;
+	var name = document.getElementById('name').value;
 	
 
 	let music = [];
@@ -33,8 +34,8 @@ function uploadUserInfo() {
         }
     };
 
-    xhr.send(JSON.stringify(
-	{"entertainment": entertainment,"types": music,"description":description ,"uid" : getCookie('uid')}
+     xhr.send(JSON.stringify(
+	{"name":name,"entertainment": entertainment,"types": music,"description":description ,"uid" : getCookie('uid')}
     ));
 }
 
