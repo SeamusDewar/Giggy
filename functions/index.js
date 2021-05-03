@@ -13,6 +13,32 @@ exports.uploaduserinfo = functions.https.onRequest((request, response) => {
     });
 });
 
+//get users data
+exports.getusers = functions.https.onRequest((request, response) => {
+
+    cors(request, response, () => {
+        // 1. Connect to our Firestore database
+        let myData = [];
+        admin.firestore().collection('UserData').get().then((snapshot) => {
+
+            if (snapshot.empty) {
+                console.log('No matching documents.');
+                response.send('No users ');
+                return;
+            }
+
+            snapshot.forEach(doc => {
+                let docObj = {};
+                docObj.id = doc.id;
+                myData.push(Object.assign(docObj, doc.data()));
+            });
+
+            // 2. Send data back to client
+            response.send(myData);
+        })
+    });
+});
+
 //post comments
 exports.postcomments= functions.https.onRequest((request,response) => {
    
@@ -92,7 +118,24 @@ exports.authorizedendpoint = functions.https.onRequest((request, response) => {
         try {
             const decodedIdToken = admin.auth().verifyIdToken(idToken).then((token) => {
                 console.log('ID Token correctly decoded', token);
-				response.send("welcome to acts page"+token);
+		let myData = [];
+				admin.firestore().collection('UserData').get().then((snapshot) => {
+
+            if (snapshot.empty) {
+                console.log('No matching documents.');
+                response.send('No users ');
+                return;
+            }
+
+            snapshot.forEach(doc => {
+                let docObj = {};
+                docObj.id = doc.id;
+                myData.push(Object.assign(docObj, doc.data()));
+            });
+
+            // 2. Send data back to client
+            response.send(myData);
+        })
                 });
         } catch (error) {
             console.error('Error while verifying Firebase ID token:', error);
