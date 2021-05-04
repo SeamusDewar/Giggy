@@ -19,7 +19,7 @@ the request.
 };
 xhr.send(JSON.stringify(
 {"handle": document.getElementById('handle').value, "comment":
-document.getElementById('comment').value}
+document.getElementById('comment').value,"uid":getCookie('uid')}}
 ));
 } 
 
