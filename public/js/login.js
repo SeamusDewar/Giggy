@@ -8,7 +8,7 @@ function login()
             // Signed in
             var user = userCredential.user;
             document.cookie = "accessToken=" + user.za;
-           // document.cookie = "uid=" + user.uid; not currently using yet
+           document.cookie = "uid=" + user.uid; //not currently using yet
             console.log("User object", user);
             // Call firebase function to save users other credentials, create another docs etc.
 
