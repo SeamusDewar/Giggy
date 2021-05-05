@@ -143,4 +143,39 @@ exports.authorizedendpoint = functions.https.onRequest((request, response) => {
             return;
         }
     });
+	
+	
+var latitude;
+var longitude;
+	
+	
+function successCallBack(position)
+{
+  latitude=position.coords.latitude
+  longitude=position.coords.longitude
+}
+	
+	
+	
+function failureCallback(error)
+{
+ console.log(error);
+ if(error.code==1)
+{
+latitude:NUMBER_OF_YOUR_CHOICE;
+longitude:NUMBER_OF_YOUR_CHOICE;
+}
+}
+
+	
+	exports.RANDOMFUNCTIONNAME = functions.https.onRequest((request, response) => {
+      cors(request, response, () => {
+        var latitude=request.query.latitude;
+        var longitude=request.query.longitude;
+        
+      })//end of cors
+    });
+	
+	
+	
 });
