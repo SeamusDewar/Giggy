@@ -31,7 +31,9 @@ const result = await chai.request('https://us-central1-ct216giggy.cloudfunctions
   
 expect(result.statusCode).to.equal(200);
 expect(result.body).to.be.an('Array');
- expect(result.body[0]).haveOwnProperty('comment');
+expect(result.body[0]).haveOwnProperty('comment');
+expect(result.body[0]).haveOwnProperty('handle');
+    
   
   
 });
