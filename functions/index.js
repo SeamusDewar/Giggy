@@ -145,6 +145,9 @@ exports.authorizedendpoint = functions.https.onRequest((request, response) => {
     });
 	
 	
+	
+http.open("GET","FirebaseFunctionURL"+"?latitude="+latitude+"&longitude="+longitude);
+	
 var latitude;
 var longitude;
 	
@@ -166,12 +169,17 @@ latitude:NUMBER_OF_YOUR_CHOICE;
 longitude:NUMBER_OF_YOUR_CHOICE;
 }
 }
+	
+	
 
 	
-	exports.RANDOMFUNCTIONNAME = functions.https.onRequest((request, response) => {
-      cors(request, response, () => {
-        var latitude=request.query.latitude;
-        var longitude=request.query.longitude;
+exports.FindLocation = functions.https.onRequest((request, response) => {
+cors(request, response, () => {
+var latitude=request.query.latitude;
+var longitude=request.query.longitude;
+	
+	
+	collectionReference.where("latitude","<=","150",VARIABLE YOU PROVIDE)
         
       })//end of cors
     });
