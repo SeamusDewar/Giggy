@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/suggested_acts.css">
+    <script src="js/getUserInfo.js"></script>
+    <script src="js/logout.js"></script>
 <!--
     
 TemplateMo 556 Catalog-Z
@@ -27,7 +29,7 @@ https://templatemo.com/tm-556-catalog-z
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-                <i class="fas fa-film mr-2"></i>
+ 
                 Giggy
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,62 +50,24 @@ https://templatemo.com/tm-556-catalog-z
                     <a class="nav-link nav-link-4" href="contact.html">Contact us</a>
                 </li>
                 <li class="nav-item">
-                    <button onclick= "firebase.auth().signOut().then(()" type="button" class="btn btn-primary" >Logout</button>
+                    <button onclick= "logout()" type="button" class="btn btn-primary" >Logout</button>
                 </li>
             </ul>
             </div>
         </div>
     </nav>
     
-    
-    
-    
-    firebase.auth().signOut().then(() => {
-    // Sign-out successful.
-    }).catch((error) => {
-    // An error happened.}); 
-
-    
-    
-    
-    
 
     <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" data-image-src="img/hero.jpg">
         <form class="d-flex tm-search-form">
-            <input class="form-control tm-search-input" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success tm-search-btn" type="submit">
-                <i class="fas fa-search"></i>
+           
             </button>
         </form>
     </div>
 
-    <div class="container-fluid tm-container-content tm-mt-60">
-        <div class="row mb-4">
-            <h2 class="col-12 tm-text-primary">Class Act</h2>
-        </div>
-        <div class="row tm-mb-90">            
-            <div class="col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <img src="img/img-01-big.jpg" alt="Image" class="img-fluid">
-            </div>
-            <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="tm-bg-gray tm-video-details">                  
-                    <div class="mb-4">
-                        <h3 class="tm-text-gray-dark mb-3">About us</h3>
-                        <p>We are class act. A rock band from Galway formed in 2005 and we are class</p>
-                    </div>
-                    <div class="text-center mb-5">
-                        <a href="#" class="btn btn-primary tm-btn-big">Get in contact</a>
-                    </div>
-                    <div>
-                        <h3 class="tm-text-gray-dark mb-3">Tags</h3>
-                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Rock</a>
-                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Galway</a>
-                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Band</a>
-                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">class</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+   <script>getUserInfo()</script>
+    <div id="response">
+    </div>
         <div>
             <script src="javascripts/getcomments.js"></script>
             <script src="javascripts/postcomments.js"></script>
@@ -117,7 +81,27 @@ https://templatemo.com/tm-556-catalog-z
             
             </div>
             
+ 
+		 <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="/__/firebase/8.4.2/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="/__/firebase/8.4.2/firebase-storage.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="/__/firebase/8.4.2/firebase-auth.js"></script>
+  <script src="/__/firebase/8.4.2/firebase-firestore.js"></script>
+   <script src="/__/firebase/8.4.2/firebase-firestore.js"></script>
+	<script src="/__/firebase/8.4.2/firebase-auth.js"></script>
+  <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
+	
     <script src="js/plugins.js"></script>
+	<script src="js/getComments.js"></script>
+    <script src="js/postComments.js"></script>
+    <script src="js/updatecomments.js"></script>
     <script>
         $(window).on("load", function() {
             $('body').addClass('loaded');
