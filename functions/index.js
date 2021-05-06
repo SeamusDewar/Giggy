@@ -90,7 +90,7 @@ exports.postcomments= functions.https.onRequest((request,response) => {
  cors(request, response, () => {
 
      let myData = []
-return admin.firestore().collection('comments').orderBy("timestamp,"desc").get().then((snapshot) => {
+return admin.firestore().collection('comments').orderBy("timestamp","desc").get().then((snapshot) => {
                     if (snapshot.empty) {
                     console.log('No matching documents.');
                     response.send('No data in database');
