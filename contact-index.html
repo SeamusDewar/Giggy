@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giggy Contact Us page</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/suggested_acts.css">
+    <link rel="stylesheet" href="css/Contact.css">
+</head>
+<body>
+    <!--
+    Page Loader
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    -->
+    </div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-film mr-2"></i>
+            </a>
+           <img src = "img/logo1.png"  id="GiggyLogo">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link nav-link-1" href="index.html"> Home </a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid tm-mt-60">
+        <div class="row tm-mb-50">
+            <div class="col-lg-4 col-12 mb-5">
+                <h2 class="tm-text-primary mb-5">Contact Page</h2>
+                <form id="contact-form" action="" method="POST" class="tm-contact-form mx-auto">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control rounded-0" placeholder="Name" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control rounded-0" placeholder="Email" required />
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" id="contact-select" name="inquiry">
+                            <option value="-">Subject</option>
+                            <option value="sales">Sales &amp; Marketing</option>
+                            <option value="creative">Creative Design</option>
+                            <option value="uiux">UI / UX</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="8" name="message" class="form-control rounded-0" placeholder="Message" required=></textarea>
+                    </div>
+
+                    <div class="form-group tm-text-right">
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </div>
+                </form>                
+            </div>
+
+            <div class="col-lg-4 col-12 mb-5">
+                <div class="tm-address-col">
+                    <h2 class="tm-text-primary mb-5">Our Address</h2>
+                    <p class="tm-mb-50">
+                        Based in Galway......
+                    </p>
+                    <address class="tm-text-gray tm-mb-50">
+                        University Road, Galway 
+                        <br>
+                        County Galway 
+                        <br>
+                       Ireland
+                    </address>
+                    <ul class="tm-contacts">
+                        <li>
+                            <a href="#" class="tm-text-gray">
+                                <i class="fas fa-envelope"></i>
+                                Email: giggyweb@gmail.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="tm-text-gray">
+                                <i class="fas fa-phone"></i>
+                                Tel: 061 000 000
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="tm-text-gray">
+                                <i class="fas fa-globe"></i>
+                                URL: www.giggy.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>                
+            </div>
+            <div class="col-lg-4 col-12">
+                <h2 class="tm-text-primary mb-5">Our Location</h2>
+                <!-- Map -->
+                <div class="mapouter mb-4">
+                    <div class="gmap-canvas">
+                            <iframe  id="gmap-canvas" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.579427447553!2d-9.06392588416408!3d53.27915487996498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b96f169862607%3A0x8b41e03d8f400270!2sNational%20University%20of%20Ireland%20Galway!5e0!3m2!1sen!2sie!4v1619690785217!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>               
+            </div>
+        </div>
+        <div class="row tm-mb-74 tm-people-row">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-5">
+                <img src="https://firebasestorage.googleapis.com/v0/b/ct216giggy.appspot.com/o/images%2FChristina.png?alt=media&token=b01da022-9ea7-4081-9359-3d4499141944" alt="Image" id="pic" class="mb-4 img-fluid">
+                <h2 class="tm-text-primary mb-4">Christina Heany</h2>
+                <h3 class="tm-text-secondary h5 mb-4">Back-end</h3>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-5">
+                <img src="https://firebasestorage.googleapis.com/v0/b/ct216giggy.appspot.com/o/images%2FSeamus.png?alt=media&token=0e4d1e0f-bdd3-447c-9a1d-d7f5c02a170b" alt="Image" id="picb"  class="mb-4 img-fluid">
+                <h2 class="tm-text-primary mb-4">Seamus Dewar</h2>
+                <h3 class="tm-text-secondary h5 mb-4">Front-end</h3>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-5">
+                <img src="img/personG.png" alt="Image" id="pic" class="mb-4 img-fluid">
+                <h2 class="tm-text-primary mb-4">Heather Fox</h2>
+                <h3 class="tm-text-secondary h5 mb-4">Back-end</h3>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-5">
+                <img src="https://firebasestorage.googleapis.com/v0/b/ct216giggy.appspot.com/o/images%2FTamsin.jpg?alt=media&token=66e4b704-7924-4116-b405-9aefcda89030" alt="Image" id="pic" class="mb-4 img-fluid">
+                <h2 class="tm-text-primary mb-4">Tamsin Harvey</h2>
+                <h3 class="tm-text-secondary h5 mb-4">Front-end</h3>
+            </div>
+        </div>
+    </div> <!-- container-fluid, tm-container-content -->
+    
+    <script src="js/plugins.js"></script>
+    <script>
+        $(window).on("load", function() {
+            $('body').addClass('loaded');
+        });
+    </script>
+</body>
+</html>
