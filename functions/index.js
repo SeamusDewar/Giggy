@@ -179,7 +179,7 @@ exports.authorizedendpoint = functions.https.onRequest((request, response) => {
     });
 	
 	
-	
+/*	
 http.open("GET","FirebaseFunctionURL"+"?latitude="+latitude+"&longitude="+longitude);
 	
 var latitude;
@@ -192,8 +192,6 @@ function successCallBack(position)
   longitude=position.coords.longitude
 }
 	
-	
-	
 function failureCallback(error)
 {
  console.log(error);
@@ -205,8 +203,6 @@ longitude:NUMBER_OF_YOUR_CHOICE;
 }
 	
 	
-
-	
 exports.FindLocation = functions.https.onRequest((request, response) => {
 cors(request, response, () => {
 var latitude=request.query.latitude;
@@ -216,8 +212,8 @@ var longitude=request.query.longitude;
 	collectionReference.where("latitude","<=","150",VARIABLE YOU PROVIDE)
         
       })//end of cors
-    });
-	
+    }); 
+	*/
 	
 	
 });
