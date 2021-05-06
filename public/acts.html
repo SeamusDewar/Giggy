@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/suggested_acts.css">
+    <script src="js/logout.js"></script>
 
 </head>
 <body>
@@ -34,7 +35,6 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <i class="fas fa-film mr-2"></i>
                 Giggy
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,21 +55,12 @@
                     <a class="nav-link nav-link-4" href="contact.html">Contact us</a>
                 </li>
                 <li class="nav-item">
-                    <button onclick= "firebase.auth().signOut().then(()" type="button" class="btn btn-primary" >Logout</button>
+                    <button onclick= "signOut()" type="button" class="btn btn-primary" >Logout</button>
                 </li>
             </ul>
             </div>
         </div>
     </nav>
-	
-	
-	
-firebase.auth().signOut().then(() => {
-    // Sign-out successful.
-    }).catch((error) => {
-    // An error happened.});
-	
-	
 
     <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" data-image-src="img/hero.jpg">
         <form class="d-flex tm-search-form">
