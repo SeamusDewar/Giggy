@@ -73,6 +73,28 @@
             
             </div>
             
+	<button id="location-button">Get User Location</button>
+    <div id="output"></div>
+
+          $('#location-button').click(function(){
+        
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(position) =>{
+                  console.log(position);
+                  $.get( "http://maps.googleapis.com/maps/api/geocode/json?latlng="+ position.coords.latitude + "," + position.coords.longitude +"&sensor=false", function(data) {
+                    console.log(data);
+	
+                  })
+                  var img = new Image();
+                  img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + position.coords.latitude + "," + position.coords.longitude + "&zoom=13&size=800x400&sensor=false";
+                  $('#output').html(img);
+                });
+                
+            }
+          });
+	
+
+	
  
 		 <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
